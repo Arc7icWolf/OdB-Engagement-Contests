@@ -62,6 +62,6 @@ def main():
 
 if __name__ == "__main__":
     st.title("Balaenoptera - Miglior Autore della Settimana")
-    st.write("Organizzato da Libertycrypto27 con il supporto di Inleo")
+    st.write("Organizzato da Libertycrypto27 e supportato da InLeo")
     if st.button("Avvia analisi dei dati"):
         main()
