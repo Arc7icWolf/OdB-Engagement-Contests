@@ -262,7 +262,8 @@ def main(authors):
 
 
 if __name__ == "__main__":
-    st.title("Engagement Contest, by Bencwarmer")
+    st.title("OdB Engagement Contest")
+    st.write("Organizzato da Bencwarmer")
     # Input box to insert one or more usernames, separated by a comma
     authors_input = st.text_input("Inserisci uno o più username separati da virgola: ")
     authors = [author.strip() for author in authors_input.split(",") if author.strip()]
