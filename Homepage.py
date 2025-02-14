@@ -6,7 +6,7 @@ st.markdown(
     <style>
     /* Sfondo */
     .stApp {
-        background-image: url("https://your-background-image-url.com");
+        background-image: url("https://files.peakd.com/file/peakd-hive/arc7icwolf/23wMgpxaWnhqwUSGxBdP7z4VCd6AFzQfGrFYVVcyHLhLjnfZXfhyoJskq4Vha6QAuDbVP.jpeg");
         background-size: cover;
         background-position: center;
     }
@@ -42,7 +42,6 @@ posts = [
     {"image": "https://files.peakd.com/file/peakd-hive/arc7icwolf/23wMgpxaWnhqwUSGxBdP7z4VCd6AFzQfGrFYVVcyHLhLjnfZXfhyoJskq4Vha6QAuDbVP.jpeg", "link": "https://peakd.com/hive-146620/@balaenoptera/olio-di-balena-scegli-il-migliore-autore-della-settimana-top-author-of-the-week-week-41-jwj"},
     {"image": "https://files.peakd.com/file/peakd-hive/arc7icwolf/23wMgpxaWnhqwUSGxBdP7z4VCd6AFzQfGrFYVVcyHLhLjnfZXfhyoJskq4Vha6QAuDbVP.jpeg", "link": "https://peakd.com/hive-146620/@balaenoptera/untoandbisunto-14-contest-decentralizzato-settimanale-su-olio-di-balena-prize-pool-100-hive-nuovo-tema--vincitori-12-contest"},
     {"image": "https://files.peakd.com/file/peakd-hive/arc7icwolf/23wMgpxaWnhqwUSGxBdP7z4VCd6AFzQfGrFYVVcyHLhLjnfZXfhyoJskq4Vha6QAuDbVP.jpeg", "link": "https://peakd.com/hive-146620/@bencwarmer/eng-ita-odb-engagement-contest"},
-blog/cover3.jpg", "link": "https://hive.blog/@utente3/post3"},
 ]
 
 # Creazione delle colonne per la visualizzazione delle immagini
