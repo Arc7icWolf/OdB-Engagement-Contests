@@ -1,6 +1,5 @@
 import streamlit as st
 
-# ---- CSS per sfondo e centratura ----
 st.markdown(
     """
     <style>
@@ -11,15 +10,11 @@ st.markdown(
         background-position: center;
     }
 
-    /* Stile del testo con bordo nero */
+    /* Stile del testo con bordo nero sfumato */
     h1, h2, h3, p, .stMarkdown {
         text-align: center;
         color: white;
-        text-shadow: 
-            -1px -1px 0 black,  
-             1px -1px 0 black,
-            -1px  1px 0 black,
-             1px  1px 0 black;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
     /* Centrare le immagini */
@@ -31,6 +26,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 # ---- Titolo centrato ----
 st.markdown(
