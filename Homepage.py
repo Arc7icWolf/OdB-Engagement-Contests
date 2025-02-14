@@ -98,10 +98,12 @@ def mainpage(session: requests.Session):
     cols = st.columns(len(posts))
     for i, post in enumerate(posts):
         with cols[i]:
-            st.markdown(
-                f'<a href="{post["link"]}" target="_blank"><img src="{post["image"]}" width="100%"></a>',
-                unsafe_allow_html=True,
-            )
+             st.markdown(
+            f'<a href="{post["link"]}" target="_blank">'
+            f'<img src="{post["image"]}" style="height:250px; object-fit:cover;">'
+            f'</a>',
+            unsafe_allow_html=True,
+        )
 
     # ---- Testo sotto le immagini ----
     st.markdown(
