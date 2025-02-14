@@ -9,7 +9,7 @@ def get_response(data, session: requests.Session):
         "https://api.deathwing.me",
         "https://api.hive.blog",
         "https://hive-api.arcange.eu",
-        "https://api.openhive.network"
+        "https://api.openhive.network",
     ]
     for url in urls:
         request = requests.Request("POST", url=url, data=data).prepare()
@@ -42,13 +42,15 @@ def get_posts(session: requests.Session):
                 cover = post["json_metadata"].get("links", [])
             for clue in clues:
                 if clue in title:
-                    contest_posts.append({
-                        "image": cover[0].strip(") "), 
-                        "link": "https://peakd.com/@" + author + "/" + permlink,
-                    })
+                    contest_posts.append(
+                        {
+                            "image": cover[0].strip(") "),
+                            "link": "https://peakd.com/@" + author + "/" + permlink,
+                        }
+                    )
                     clues.remove(clue)
                     break
-    
+
     return contest_posts
 
 
@@ -77,9 +79,8 @@ def mainpage(session: requests.Session):
         }
         </style>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True,
     )
-
 
     # ---- Titolo centrato ----
     st.markdown(
@@ -98,12 +99,12 @@ def mainpage(session: requests.Session):
     cols = st.columns(len(posts))
     for i, post in enumerate(posts):
         with cols[i]:
-             st.markdown(
-            f'<a href="{post["link"]}" target="_blank">'
-            f'<img src="{post["image"]}" style="height:200px; width:auto; max-width:100%;">'
-            f'</a>',
-            unsafe_allow_html=True,
-        )
+            st.markdown(
+                f'<a href="{post["link"]}" target="_blank">'
+                f'<img src="{post["image"]}" style="height:200px; width:auto; max-width:100%;">'
+                f"</a>",
+                unsafe_allow_html=True,
+            )
 
     # ---- Testo sotto le immagini ----
     st.markdown(
@@ -119,4 +120,3 @@ if __name__ == "__main__":
         print(f"JSON decode error or missing key: {e}")
     except Exception as e:
         print(f"An error occurred: {e}")
-        
