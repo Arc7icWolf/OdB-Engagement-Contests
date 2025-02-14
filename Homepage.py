@@ -100,7 +100,7 @@ def mainpage(session: requests.Session):
         with cols[i]:
              st.markdown(
             f'<a href="{post["link"]}" target="_blank">'
-            f'<img src="{post["image"]}" style="height:250px; object-fit:cover;">'
+            f'<img src="{post["image"]}" style="height:200px; width:auto; max-width:100%;">'
             f'</a>',
             unsafe_allow_html=True,
         )
