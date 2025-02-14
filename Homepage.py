@@ -93,18 +93,23 @@ def mainpage(session: requests.Session):
 
     # ---- Tabella con immagini e link ----
     posts = get_posts(session)
-    print(posts)
 
-    # Creazione delle colonne per la visualizzazione delle immagini
-    cols = st.columns(len(posts))
-    for i, post in enumerate(posts):
-        with cols[i]:
-            st.markdown(
-                f'<a href="{post["link"]}" target="_blank">'
-                f'<img src="{post["image"]}" style="height:200px; width:auto; max-width:100%;">'
-                f"</a>",
-                unsafe_allow_html=True,
-            )
+    # Definiamo il numero di colonne per riga
+    NUM_COLS = 3
+
+    # Creazione della griglia dinamica
+    rows = [posts[i : i + NUM_COLS] for i in range(0, len(posts), NUM_COLS)]
+
+    for row in rows:
+        cols = st.columns(len(row))  # Crea un numero di colonne pari ai post nella riga
+        for i, post in enumerate(row):
+            with cols[i]:
+                st.markdown(
+                    f'<a href="{post["link"]}" target="_blank">'
+                    f'<img src="{post["image"]}" style="height:200px; width:auto; max-width:100%;">'
+                    f"</a>",
+                    unsafe_allow_html=True,
+                )
 
     # ---- Testo sotto le immagini ----
     st.markdown(
