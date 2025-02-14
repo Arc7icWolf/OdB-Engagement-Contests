@@ -16,10 +16,10 @@ st.markdown(
         text-align: center;
         color: white;
         text-shadow: 
-            -2px -2px 0 black,  
-             2px -2px 0 black,
-            -2px  2px 0 black,
-             2px  2px 0 black;
+            -1px -1px 0 black,  
+             1px -1px 0 black,
+            -1px  1px 0 black,
+             1px  1px 0 black;
     }
 
     /* Centrare le immagini */
