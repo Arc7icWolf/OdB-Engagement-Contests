@@ -6,19 +6,20 @@ st.markdown(
     <style>
     /* Sfondo */
     .stApp {
-        background-image: url("https://files.peakd.com/file/peakd-hive/arc7icwolf/23wMgpxaWnhqwUSGxBdP7z4VCd6AFzQfGrFYVVcyHLhLjnfZXfhyoJskq4Vha6QAuDbVP.jpeg");
+        background-image: url("https://your-background-image-url.com");
         background-size: cover;
         background-position: center;
     }
 
-    /* Centrare il titolo */
-    .title {
+    /* Stile del testo con bordo nero */
+    h1, h2, h3, p, .stMarkdown {
         text-align: center;
-    }
-    
-    /* Centrare il testo */
-    .stMarkdown {
-        text-align: center;
+        color: white;
+        text-shadow: 
+            -2px -2px 0 black,  
+             2px -2px 0 black,
+            -2px  2px 0 black,
+             2px  2px 0 black;
     }
 
     /* Centrare le immagini */
@@ -28,7 +29,7 @@ st.markdown(
     }
     </style>
     """,
-    unsafe_allow_html=True,
+    unsafe_allow_html=True
 )
 
 # ---- Titolo centrato ----
