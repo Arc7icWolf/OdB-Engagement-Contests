@@ -6,7 +6,7 @@ st.markdown(
     <style>
     /* Sfondo */
     .stApp {
-        background-image: url("https://your-background-image-url.com");
+        background-image: url("https://files.peakd.com/file/peakd-hive/arc7icwolf/23wMgpxaWnhqwUSGxBdP7z4VCd6AFzQfGrFYVVcyHLhLjnfZXfhyoJskq4Vha6QAuDbVP.jpeg");
         background-size: cover;
         background-position: center;
     }
