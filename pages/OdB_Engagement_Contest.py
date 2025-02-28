@@ -160,12 +160,33 @@ def replies(author, seven_days, session: requests.Session):
 # Get total replies amount for target post from target author
 def post_replies(author, permlink, session: requests.Session):
     data = (
-        f'{{"jsonrpc":"2.0", "method":"condenser_api.get_content_replies", '
-        f'"params":["{author}", "{permlink}"], "id":1}}'
-    )
+        f'{{"jsonrpc":"2.0", "method":"database_api.list_comments", '
+        f'"params": {{"start":["{author}","{permlink}","",""], '
+        f'"limit":1000, "order":"by_root"}}, "id":1}}'
+    )          
     post_replies = get_response(data, session)
+    bot = [
+        "lolzbot", 
+        "pizzabot", 
+        "hiq.smartbot", 
+        "discovery-it", 
+        "beerlover", 
+        "splinterboost", 
+        "tipu", 
+        "indiaunited", 
+        "ccceo.voter", 
+        "luvshares", 
+        "steemmonsters", 
+        "duo-tip",
+        "hivebuzz"
+        ]
+    post_replies_counter = 0
 
-    return len(post_replies)
+    for reply in post_replies['comments'][1:]:
+        if reply['author'] not in bot:
+            post_replies_counter += 1
+
+    return post_replies_counter
 
 
 # Get total votes amount for target post from target author
@@ -262,8 +283,7 @@ def main(authors):
 
 
 if __name__ == "__main__":
-    st.title("OdB Engagement Contest")
-    st.write("Organizzato da Bencwarmer")
+    st.title("Engagement Contest, by Bencwarmer")
     # Input box to insert one or more usernames, separated by a comma
     authors_input = st.text_input("Inserisci uno o più username separati da virgola: ")
     authors = [author.strip() for author in authors_input.split(",") if author.strip()]
