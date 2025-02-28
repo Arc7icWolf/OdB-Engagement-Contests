@@ -275,6 +275,12 @@ def main(authors):
         logger.error(f"An error occurred: {e}")
         st.error(f"An error occurred: {e}")
         return
+
+    if entries:
+        st.write("Ecco i dati pronti all'uso!")
+    else:
+        st.write("Impossibile raccogliere i dati: qualcosa è andato storto...")
+        
     st.write("### Risultato degli ultimi 7 giorni:")
     with open("entries.txt", "w", newline="", encoding="utf-8") as file:
         for entry in entries:
