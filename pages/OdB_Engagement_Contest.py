@@ -201,6 +201,32 @@ def votes(author, permlink, session: requests.Session):
     return len(votes)
 
 
+# get posts multiplier
+def get_posts_multiplier(posts):
+    if 3 <= posts < 5:
+        return 1.2
+    elif 5 <= posts < 7:
+        return 1.5
+    elif posts == 7:
+        return 1.7
+    else:
+        return 1
+    
+
+# get replies multiplier
+def get_replies_multiplier(replies):
+    if replies <= 5:
+        return 0.5
+    elif 5 < replies < 25:
+        return 1
+    elif 25 <= replies < 50:
+        return 1.2
+    elif 50 <= replies < 75:
+        return 1.5
+    elif replies >= 75:
+        return 1.7
+
+            
 # Found and check eligible posts published in the last 7 days in the target community
 def eligible_posts(authors, session: requests.Session):
     today = datetime.now()
@@ -239,9 +265,13 @@ def eligible_posts(authors, session: requests.Session):
         if total_replies == 0:
             total_replies = 1
         
+        posts_multiplier = get_posts_multiplier(total_posts)
+
+        replies_multiplier = get_replies_multiplier(total_replies)
+        
         formula = (
-            (total_words / total_posts * 0.5)
-            + (total_replies_length / total_replies * 10)
+            (total_words / total_posts * 0.5 * posts_multiplier)
+            + (total_replies_length / total_replies * 10 * replies_multiplier)
             + (total_votes / total_posts * 0.01)
             + (total_post_replies / total_posts * 0.2)
         )
