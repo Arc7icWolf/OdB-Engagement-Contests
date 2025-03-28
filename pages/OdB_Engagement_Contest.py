@@ -274,6 +274,8 @@ def eligible_posts(authors, session: requests.Session):
             + (total_replies_length / total_replies * 10 * replies_multiplier)
             + (total_votes / total_posts * 0.01)
             + (total_post_replies / total_posts * 0.2)
+            + (total_posts * 100 * posts_multiplier)
+            + (total_replies * 2 * replies_multiplier)
         )
 
         result = (
